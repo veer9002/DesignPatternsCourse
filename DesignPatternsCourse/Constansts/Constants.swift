@@ -11,7 +11,7 @@ import Foundation
 struct Constants {
     
     struct Urls {
-        static let moviesUrl = ""
+        static let moviesUrl = "https://itunes.apple.com/search?media=music&term=bollywood"
     }
     
 }

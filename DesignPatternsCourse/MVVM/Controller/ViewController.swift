@@ -11,15 +11,23 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var moviesDataArr = [Movies]()
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        fetchAllMovies()
     }
     
     // MARK: Custom Methods
+    func fetchAllMovies() {
+        let urlString = Constants.Urls.moviesUrl
+        ServiceManager.shareInstance.getMoviesAPI(urlString: urlString) { (result) in
+            self.moviesDataArr = result
+            print(self.moviesDataArr.count)
+        }
+    }
 
 }
 
